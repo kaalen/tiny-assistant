@@ -25,6 +25,13 @@ Experimenting with smaller LLMs that can run on commodity hardware like Raspberr
 6. Download the LLM models you'll be using. Here's some suggested links to models on Hugging Face:
     * TheBloke/Llama-2-7b-Chat-GGUF [TheBloke/llama-2-7b-chat.Q4_K_M.gguf](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/tree/main)
     * TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF [TheBloke/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/tree/main)
+7. Run the code
+
+    `python ./src/app_chat.py`
+
+## Hardware and Dev Environment Setup
+
+I tested this code on Raspberry Pi 5 8GB running Raspbian Bookworm distro. 
 
 ## References
 
