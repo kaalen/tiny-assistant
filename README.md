@@ -27,7 +27,8 @@ Experimenting with smaller LLMs that can run on commodity hardware like Raspberr
     * TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF [TheBloke/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/tree/main)
 7. Run the code
 
-    `python ./src/app_chat.py`
+    `python ./src/app.py`
+8. While the app is running, press and hold SPACE key on your keyboard. Use a microphone or a headset to speak your prompt. The response from the LLM will be written out to the console and generated into speech. You obviously need to have both a microphone and speakers plugged in.
 
 ## Hardware and Dev Environment Setup
 

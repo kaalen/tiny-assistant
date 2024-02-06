@@ -15,7 +15,7 @@ class LLMHandler():
             prompt_template (str): prompt template"""
         self.model_file = model_file
         self.prompt_template = prompt_template
-        self.callback_manager = CallbackManager([StreamingCallbackHandler()])
+        self.callback_manager = CallbackManager([StreamingCallbackHandler(enable_tts)])
         self.llm = LlamaCpp(
             model_path=model_file,
             temperature=0.1,
@@ -24,7 +24,6 @@ class LLMHandler():
             callback_manager=self.callback_manager,
             verbose=True,
         )
-        self.enable_tts = enable_tts
 
     def prompt(self, user_input: str):
         """ Give LLM an input prompt """
@@ -35,6 +34,10 @@ class LLMHandler():
 
 class StreamingCallbackHandler(StreamingStdOutCallbackHandler):
     """ Callback handler for streaming """
+
+    def __init__(self, enable_tts) -> None:
+        super().__init__()
+        self.enable_tts = enable_tts
 
     def on_llm_start(
         self, serialized: Dict[str, Any], prompts: List[str], **kwargs: Any

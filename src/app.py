@@ -19,7 +19,7 @@ if __name__ == "__main__":
     logger = logging.getLogger() 
     logger.setLevel(logging.INFO)
 
-    llama_handler = LLMHandler(model_file, template_tiny)
+    llama_handler = LLMHandler(model_file, template_tiny, enable_tts=True)
 
     logger.info("Init automatic speech recogntion...")
     speech_handler = SpeechHandler("openai/whisper-tiny.en", keyboard.Key.space, llama_handler)
