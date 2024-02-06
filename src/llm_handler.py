@@ -5,9 +5,10 @@ from langchain.callbacks.manager import CallbackManager
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.prompts import PromptTemplate
 from langchain.schema.output_parser import StrOutputParser
+import pyttsx3
 
 class LLMHandler():
-    def __init__(self, model_file, prompt_template):
+    def __init__(self, model_file, prompt_template, enable_tts):
         """ Load the LLM model of your choice
          Args:
             model_file (str): path to the model file
@@ -23,6 +24,7 @@ class LLMHandler():
             callback_manager=self.callback_manager,
             verbose=True,
         )
+        self.enable_tts = enable_tts
 
     def prompt(self, user_input: str):
         """ Give LLM an input prompt """
@@ -39,11 +41,19 @@ class StreamingCallbackHandler(StreamingStdOutCallbackHandler):
     ) -> None:
         """Run when LLM starts running."""
         logging.debug("DEBUG: LLM started")
+        self.output = ""
+        if self.enable_tts:
+            self.tts_engine = pyttsx3.init()
 
     def on_llm_end(self, response: Any, **kwargs: Any) -> None:
         """Run when LLM ends running."""
         logging.debug("DEBUG: LLM ended")
+        if self.enable_tts:
+            self.tts_engine.say(self.output)
+            self.tts_engine.runAndWait()
 
     def on_llm_new_token(self, token: str, **kwargs: Any) -> None:
         """Run on new LLM token. Only available when streaming is enabled."""
         print(f"{token}", end="")
+        self.output += token
+
