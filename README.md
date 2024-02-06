@@ -1,6 +1,6 @@
-# Tiny LLM Assistant
+# Tiny LLM Assistant for Raspberry Pi
 
-Experimenting with smaller LLMs that can run on commodity hardware like Raspberry Pi as tiny personal assistant if you're GPU poor like me or just want to tinker around. Because why not!
+Experimenting with smaller LLMs that can run on commodity hardware like Raspberry Pi as tiny personal assistant if you're GPU poor like me or just want to tinker around. Because why not! Of course, you can run this on more powerful hardware too.
 
 ## Setup
 
