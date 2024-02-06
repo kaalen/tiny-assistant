@@ -21,7 +21,7 @@ Experimenting with smaller LLMs that can run on commodity hardware like Raspberr
     source .venv/bin/activate
     ```
 4. Install python dependencies `pip install -r requirements.txt`
-5. Make sure you have `ffmpeg` for your OS installed. If you don't have you can download from [ffmpeg.org](https://ffmpeg.org/download.html)
+5. Make sure you have `ffmpeg` for your OS installed. If you don't have you can download from [ffmpeg.org](https://ffmpeg.org/download.html). Make sure you add the path to where you install the ffmpeg to your PATH environment variable.
 6. Download the LLM models you'll be using. Here's some suggested links to models on Hugging Face:
     * TheBloke/Llama-2-7b-Chat-GGUF [TheBloke/llama-2-7b-chat.Q4_K_M.gguf](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/tree/main)
     * TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF [TheBloke/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf](https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/tree/main)
